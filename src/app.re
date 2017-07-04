@@ -11,6 +11,7 @@ type componentState = {
   # t (yearsToGrow) = number of years
   # n (timesCompoundedPerYear) = number of times it is compounded
 */
+
 let calcInterest (p: float) (r: float) (t: int) (n: float) => 
   (p *. (1.0 +. r/.n) ** (n*.(float t)));
 
@@ -51,7 +52,7 @@ let handleChange source event state _self => {
 };
 
 
-let make _title _children => {
+let make ::title _children => {
   {
     ...component,
     initialState: fun () :componentState => {
