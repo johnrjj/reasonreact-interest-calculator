@@ -55,27 +55,39 @@ let make ::title _children => {
     render: fun state self => {
       let amount = getAmount state.principle state.rate state.yearsToGrow state.timesCompoundedPerYear;
       <div className="App">
-        <div className="App-header"> 
-          <h1> 
-            (ReasonReact.stringToElement "ReasonReact Interest Calculator") 
-          </h1> 
+        <div className="page">
+          <div className="page-header"> 
+            <h1> 
+              (ReasonReact.stringToElement "ReasonReact Interest Calculator") 
+            </h1> 
+          </div>
+          <div className="card">
+            <div className="input-container">
+              <label>
+                (ReasonReact.stringToElement "Principle")
+              </label>
+              <input value=(state.principle) onChange=(self.update (handleChange "principle")) />
+            </div>
+            <div>
+              <label>
+                (ReasonReact.stringToElement "Rate")
+              </label>
+              <input value=(state.rate) onChange=(self.update (handleChange "rate")) />
+            </div>
+            <div>
+              <label>
+                (ReasonReact.stringToElement "Years to grow")
+              </label>
+              <input value=(state.yearsToGrow) onChange=(self.update (handleChange "yearsToGrow")) />
+            </div>
+            <div className="total-container">
+              <label>
+                (ReasonReact.stringToElement "Total")
+              </label>
+              <p>(ReasonReact.stringToElement amount)</p>
+            </div>
+          </div>
         </div>
-        <label>
-          (ReasonReact.stringToElement "Principle")
-          <input value=(state.principle) onChange=(self.update (handleChange "principle")) />
-        </label>
-        <label>
-          (ReasonReact.stringToElement "Rate")
-          <input value=(state.rate) onChange=(self.update (handleChange "rate")) />
-        </label>
-        <label>
-          (ReasonReact.stringToElement "Years to grow")
-          <input value=(state.yearsToGrow) onChange=(self.update (handleChange "yearsToGrow")) />
-        </label>
-        <label>
-          (ReasonReact.stringToElement "Total")
-          <input value=(amount) readOnly=(Js.true_) />
-        </label>
       </div>
     },
   }

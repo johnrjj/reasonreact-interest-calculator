@@ -1,35 +1,74 @@
+html {
+  font-size: 16px;
+}
+
 body {
   font-family: Open Sans, sans-serif;
-  background-color: #f6f4f4;
+  background-color: #f8f8f8;
 }
 
-code {
-  font-family: Courier New;
-  color: #8f8f8f;
-}
-
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 200px;
-}
-
-.App-header {
+.page {
   display: flex;
+  justify-content: center;
   align-items: center;
-  margin: 100px;
-  color: #333333;
+  flex-direction: column;
+  margin-top: 1rem;
 }
 
-.App-intro {
-  font-size: large;
-  color: #444;
+.page-header {
+  color: #619EE4;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.card {
+  min-width: 16rem;
+  background-color: #ffffff;
+  padding: 2rem 4rem;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.04);
+}
+
+.total-container {
+  margin-top: 1rem;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+input {
+  width: 100%;
+  padding: .75rem;
+  border: 1px solid #C5C5C5;
+  border-radius: .25rem;
+  font-size: 1.25rem;
+  outline: 0;
+  color: #555459;
+  margin: 0 0 .5rem;
+}
+
+/*colors...*/
+.a {
+  color: #f8f8f8;
+}
+.b {
+  color: #D3D5D6;
+}
+.c {
+  color: #0174E4;
+}
+.d {
+  color: #A7AAAB;
+}
+.e {
+  color: #619EE4;
+}
+.f {
+  color: #AFCBDB;
+}
+.e {
+  color: #5A6071;
 }

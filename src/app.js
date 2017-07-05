@@ -76,26 +76,31 @@ function make(_, _$1) {
       return React.createElement("div", {
                   className: "App"
                 }, React.createElement("div", {
-                      className: "App-header"
-                    }, React.createElement("h1", undefined, "ReasonReact Interest Calculator")), React.createElement("label", undefined, "Principle", React.createElement("input", {
-                          value: state[/* principle */0],
-                          onChange: Curry._1(self[/* update */2], (function (param, param$1, param$2) {
-                                  return handleChange("principle", param, param$1, param$2);
-                                }))
-                        })), React.createElement("label", undefined, "Rate", React.createElement("input", {
-                          value: state[/* rate */1],
-                          onChange: Curry._1(self[/* update */2], (function (param, param$1, param$2) {
-                                  return handleChange("rate", param, param$1, param$2);
-                                }))
-                        })), React.createElement("label", undefined, "Years to grow", React.createElement("input", {
-                          value: state[/* yearsToGrow */2],
-                          onChange: Curry._1(self[/* update */2], (function (param, param$1, param$2) {
-                                  return handleChange("yearsToGrow", param, param$1, param$2);
-                                }))
-                        })), React.createElement("label", undefined, "Total", React.createElement("input", {
-                          readOnly: true,
-                          value: amount
-                        })));
+                      className: "page"
+                    }, React.createElement("div", {
+                          className: "page-header"
+                        }, React.createElement("h1", undefined, "ReasonReact Interest Calculator")), React.createElement("div", {
+                          className: "card"
+                        }, React.createElement("div", {
+                              className: "input-container"
+                            }, React.createElement("label", undefined, "Principle"), React.createElement("input", {
+                                  value: state[/* principle */0],
+                                  onChange: Curry._1(self[/* update */2], (function (param, param$1, param$2) {
+                                          return handleChange("principle", param, param$1, param$2);
+                                        }))
+                                })), React.createElement("div", undefined, React.createElement("label", undefined, "Rate"), React.createElement("input", {
+                                  value: state[/* rate */1],
+                                  onChange: Curry._1(self[/* update */2], (function (param, param$1, param$2) {
+                                          return handleChange("rate", param, param$1, param$2);
+                                        }))
+                                })), React.createElement("div", undefined, React.createElement("label", undefined, "Years to grow"), React.createElement("input", {
+                                  value: state[/* yearsToGrow */2],
+                                  onChange: Curry._1(self[/* update */2], (function (param, param$1, param$2) {
+                                          return handleChange("yearsToGrow", param, param$1, param$2);
+                                        }))
+                                })), React.createElement("div", {
+                              className: "total-container"
+                            }, React.createElement("label", undefined, "Total"), React.createElement("p", undefined, amount)))));
     });
   newrecord[/* initialState */10] = (function () {
       return /* record */[
