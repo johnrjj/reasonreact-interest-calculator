@@ -12,8 +12,8 @@ type componentState = {
   n (timesCompoundedPerYear) = number of times it is compounded
 */
 
-let calcInterest (p: float) (r: float) (t: int) (n: float) => 
-  (p *. (1.0 +. r/.n) ** (n*.(float t)));
+let calcInterest (p: float) (r: float) (t: float) (n: float) => 
+  (p *. (1.0 +. r/.n) ** (n*.(t)));
 
 let component = ReasonReact.statefulComponent "App";
 
@@ -21,7 +21,7 @@ let getAmount (p: string) (r: string) (t: string) (n: string) => {
   try ({
     let parsedP = float_of_string p;
     let parsedR = float_of_string r;
-    let parsedT = int_of_string t;
+    let parsedT = float_of_string t;
     let parsedN = float_of_string n;
     let amount = calcInterest parsedP parsedR parsedT parsedN;
     string_of_float amount;
@@ -43,14 +43,14 @@ let handleChange source event state _self => {
   };
 };
 
-let make ::title _children => {
+let make _children => {
   {
     ...component,
     initialState: fun () :componentState => {
-      principle: "1000",
+      principle: "1000.00",
       rate: "0.03",
       yearsToGrow: "10",
-      timesCompoundedPerYear: "12"
+      timesCompoundedPerYear: "12",
     },
     render: fun state self => {
       let amount = getAmount state.principle state.rate state.yearsToGrow state.timesCompoundedPerYear;
@@ -84,7 +84,7 @@ let make ::title _children => {
               <label>
                 (ReasonReact.stringToElement "Total")
               </label>
-              <p>(ReasonReact.stringToElement amount)</p>
+              <p>(ReasonReact.stringToElement ("$" ^ amount))</p>
             </div>
           </div>
         </div>

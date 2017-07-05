@@ -18,7 +18,7 @@ function getAmount(p, r, t, n) {
   try {
     var parsedP = Caml_format.caml_float_of_string(p);
     var parsedR = Caml_format.caml_float_of_string(r);
-    var parsedT = Caml_format.caml_int_of_string(t);
+    var parsedT = Caml_format.caml_float_of_string(t);
     var parsedN = Caml_format.caml_float_of_string(n);
     return Pervasives.string_of_float(calcInterest(parsedP, parsedR, parsedT, parsedN));
   }
@@ -69,7 +69,7 @@ function handleChange(source, $$event, state, _) {
   return /* Update */Block.__(0, [$js]);
 }
 
-function make(_, _$1) {
+function make() {
   var newrecord = component.slice();
   newrecord[/* render */9] = (function (state, self) {
       var amount = getAmount(state[/* principle */0], state[/* rate */1], state[/* yearsToGrow */2], state[/* timesCompoundedPerYear */3]);
@@ -100,11 +100,11 @@ function make(_, _$1) {
                                         }))
                                 })), React.createElement("div", {
                               className: "total-container"
-                            }, React.createElement("label", undefined, "Total"), React.createElement("p", undefined, amount)))));
+                            }, React.createElement("label", undefined, "Total"), React.createElement("p", undefined, "$" + amount)))));
     });
   newrecord[/* initialState */10] = (function () {
       return /* record */[
-              /* principle */"1000",
+              /* principle */"1000.00",
               /* rate */"0.03",
               /* yearsToGrow */"10",
               /* timesCompoundedPerYear */"12"
