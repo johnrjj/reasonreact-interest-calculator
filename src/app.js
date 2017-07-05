@@ -15,11 +15,16 @@ function calcInterest(p, r, t, n) {
 var component = ReasonReact.statefulComponent("App");
 
 function getAmount(p, r, t, n) {
-  var parsedP = Caml_format.caml_float_of_string(p);
-  var parsedR = Caml_format.caml_float_of_string(r);
-  var parsedT = Caml_format.caml_int_of_string(t);
-  var parsedN = Caml_format.caml_float_of_string(n);
-  return Pervasives.string_of_float(calcInterest(parsedP, parsedR, parsedT, parsedN));
+  try {
+    var parsedP = Caml_format.caml_float_of_string(p);
+    var parsedR = Caml_format.caml_float_of_string(r);
+    var parsedT = Caml_format.caml_int_of_string(t);
+    var parsedN = Caml_format.caml_float_of_string(n);
+    return Pervasives.string_of_float(calcInterest(parsedP, parsedR, parsedT, parsedN));
+  }
+  catch (exn){
+    return "Error";
+  }
 }
 
 function handleChange(source, $$event, state, _) {

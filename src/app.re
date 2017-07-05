@@ -6,10 +6,10 @@ type componentState = {
 };
 
 /*
-  # p (principal) = principal amount
-  # r (rate) = annual rate of interest
-  # t (yearsToGrow) = number of years
-  # n (timesCompoundedPerYear) = number of times it is compounded
+  p (principal) = principal amount
+  r (rate) = annual rate of interest
+  t (yearsToGrow) = number of years
+  n (timesCompoundedPerYear) = number of times it is compounded
 */
 
 let calcInterest (p: float) (r: float) (t: int) (n: float) => 
@@ -18,12 +18,16 @@ let calcInterest (p: float) (r: float) (t: int) (n: float) =>
 let component = ReasonReact.statefulComponent "App";
 
 let getAmount (p: string) (r: string) (t: string) (n: string) => {
-  let parsedP = float_of_string p;
-  let parsedR = float_of_string r;
-  let parsedT = int_of_string t;
-  let parsedN = float_of_string n;
-  let amount = calcInterest parsedP parsedR parsedT parsedN;
-  string_of_float amount;
+  try ({
+    let parsedP = float_of_string p;
+    let parsedR = float_of_string r;
+    let parsedT = int_of_string t;
+    let parsedN = float_of_string n;
+    let amount = calcInterest parsedP parsedR parsedT parsedN;
+    string_of_float amount;
+    }) {
+    | _ => "Error"
+  };
 };
 
 let handleChange source event state _self => {
@@ -50,7 +54,6 @@ let handleChange source event state _self => {
     }
   };
 };
-
 
 let make ::title _children => {
   {
