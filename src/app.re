@@ -34,23 +34,11 @@ let handleChange source event state _self => {
   let input = (ReactDOMRe.domElementToObj (ReactEventRe.Form.target event))##value;
   ReasonReact.Update {
     switch (source) {
-    | "rate" => {
-        ...state,
-        rate: input,
-      }
-    | "principle" => {
-        ...state,
-        principle: input,
-      }
-    | "yearsToGrow" => {
-        ...state,
-        yearsToGrow: input,
-      }
-    | "timesCompoundedPerYear" => {
-        ...state,
-        timesCompoundedPerYear: input,
-      }
-    | _ => state
+      | "rate" => { ...state, rate: input }
+      | "principle" => { ...state, principle: input }
+      | "yearsToGrow" => { ...state, yearsToGrow: input }
+      | "timesCompoundedPerYear" => { ...state, timesCompoundedPerYear: input }
+      | _ => state
     }
   };
 };

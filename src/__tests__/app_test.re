@@ -1,8 +1,8 @@
-/*open Jest;*/
+open Jest;
 
-/*open ExpectJs;*/
+open ExpectJs;
 
-/*let _ =
+let _ =
   describe
     "src/app.re"
     (
@@ -24,4 +24,4 @@
             }
           )
       }
-    );*/
+    );
