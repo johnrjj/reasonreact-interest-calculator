@@ -25,7 +25,7 @@ let getAmount (p: string) (r: string) (t: string) (n: string) => {
     let parsedN = float_of_string n;
     let amount = calcInterest parsedP parsedR parsedT parsedN;
     string_of_float amount;
-    }) {
+  }) {
     | _ => "Error"
   };
 };
